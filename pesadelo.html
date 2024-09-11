@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Pesadelo</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+    <audio id="audioFundoPesadelo" autoplay loop>
+        <source src="./audio/O Pesadelo/pesadelo-1.wav" type="audio/mpeg">
+    </audio>
+    
+    <div class="background">
+        <img src="./img/O Pesadelo/Background.png" alt="background" class="background-img">
+    </div>
+
+    <div class="astraPesadelo">
+        <img src="./img/O Pesadelo/Astra.png" alt="astra">
+    </div>
+
+    <div class="fantasmas1" id="audio-fantasmas-container">
+        <img src="./img/O Pesadelo/Fantasmas1.png" alt="fantasmas" id="btnFantasma">
+        <audio id="audio-fantasmas">
+            <source src="./audio/O Pesadelo/classic-ghost-sound-95773.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="fantasmas2">
+        <img src="./img/O Pesadelo/Fantasmas2.png" alt="fantasmas">
+    </div>
+
+    <div class="botaoAssombrado">
+        <img id="btnTrocarAudio" src="./img/O Pesadelo/BotãoAssombrado.png" alt="botao assombrado">
+    </div>
+
+    <div class="texto">
+        <p>Astra está dormindo... <br>com o que será que ele está sonhando?</p>
+    </div>
+
+    <div class="textoEspecial1">
+        <p>Astra está dormindo... <br>com o que será que ele está sonhando?</p>
+    </div>
+
+    <div class="textoEspecial2">
+        <p>Astra está dormindo... <br>com o que será que ele está sonhando?</p>
+    </div>
+
+    <dialog id="modal">
+        <audio id="audio-bolhas-modal">
+            <source src="./audio/Mergulho/bubbles-159281.mp3" type="audio/mpeg">
+        </audio>
+        <span id="nameError" class="error"></span>
+        <p>Quais são os meus medos?</p>
+        <input class="inpFasntasmas" id="inpFantasmas" type="text" placeholder="O que te assombra?">
+        <div id="opcoes">
+            <button id="btnEnviarPesadelo">Mergulhar</button>
+        </div>
+    </dialog>
+
+    <script type="text/javascript" src="./js/pesadelo.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1363 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eater&family=Foldit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eater&family=Foldit:wght@100..900&family=Rubik+Glitch&display=swap');
+
+/* RESET GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+    /* overflow: clip; */
+}
+
+/* ESTILOS GLOBAIS */
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #ffffff; /* Adicione a cor de fundo desejada */
+}
+
+.error {
+    width: 350px;
+    height: auto;
+    padding: 15px 10px 20px 10px;
+    text-align: center;
+    color: #a78600;
+    border: 4px solid #f9d966;
+    border-radius: 7px;
+    font-size: 15px;
+    display: none;
+    background-color: #f9f9cd;
+    box-shadow: 0px 4px 12px rgba(31, 1, 40, 0.3);
+    z-index: 2;
+}
+
+/* --- CENA O SONHO --- */
+
+/* ELEMENTO DE FUNDO */
+.background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* ELEMENTO Astra */
+.astra img,
+.astraPesadelo img {
+    position: fixed;
+    top: 150px;
+    left: 585px;
+    width: 21%;
+    cursor: pointer;
+    z-index: 2;
+    animation: astra 2.5s infinite alternate linear;
+}
+
+.astraPesadelo img {
+    cursor: none;
+    animation: astraPesadelo 0.2s infinite alternate linear;
+}
+
+.astraMergulho img {
+    position: fixed;
+    left: 580px;
+    bottom: 100px;
+    transform: scale(0.6);
+    animation: astraMergulho 2.5s infinite alternate linear;
+    cursor: pointer;
+}
+
+.astra img:hover {
+    width: 22%;
+    left: 580px;
+    transition: width 0.3s, left 0.3s;
+}
+
+.astraAiolos img {
+    position: absolute;
+    top: 635px;
+    left: 175px;
+    width: 13%;
+    height: 13%;
+    cursor: pointer;
+}
+
+.astraAiolos img:hover {
+    width: 14%;
+    height: 14%;
+    left: 170px;
+    top: 630px;
+    transition: width 0.3s, height 0.3s, left 0.3s, top 0.3s;
+}
+
+/* ELEMENTO Estrelas */
+.estrelas img {
+    position: fixed;
+    top: 130px;
+    left: 195px;
+    width: 75%;
+    z-index: 1;
+}
+
+/* ELEMENTO Beija-flor */
+.beijaflor img {
+    position: fixed;
+    top: 470px;
+    left: 332px;
+    width: 7%;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.beijaflor img:hover {
+    width: 8%;
+    left: 327px;
+    top: 460px;
+    transition: width 0.3s, left 0.3s, top 0.3s;
+}
+
+/* BOTÃO */
+.botao,
+.botaoAssombrado {
+    position: fixed;
+    top: 45px;
+    left: 1300px;
+    cursor: pointer;
+}
+
+.botaoAssombrado {
+    top: 30px;
+    left: 1278px;
+}
+
+/* TEXTO */
+.texto,
+.textoEspecial1,
+.textoEspecial2 {
+    position: absolute;
+    bottom: 200px;
+    right: 240px;
+    width: 350px;
+    color: white;
+    text-align: right;
+    animation: texto 2s ease-in-out;
+}
+
+.textoEspecial1 {
+    bottom: 205px;
+    right: 230px;
+    color: rgb(36, 117, 117);
+    z-index: -1;
+}
+
+.textoEspecial2 {
+    bottom: 197px;
+    right: 245px;
+    color: rgb(65, 208, 199);
+    z-index: -1;
+}
+
+.texto p,
+.textoEspecial1 p,
+.textoEspecial2 p {
+    font-family: 'Bad Script', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 2em;
+}
+
+/* BOTÃO DESPERTAR */
+.btnDespertar {
+    position: absolute;
+    top: 450px;
+    left: 630px;
+    z-index: 5;
+}
+
+.btnDespertar button {
+    padding: 15px 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    background-color: rgba(47, 7, 115, 0.7);
+    color: white;
+    cursor: pointer;
+    border: solid 2px rgba(170, 114, 255, 0.5);
+    border-radius: 7px;
+    outline: none;
+    transition: transform 0.3s ease;
+}
+
+.btnDespertar button:hover {
+    background-color: rgba(70, 14, 166, 0.7);
+}
+
+/* DIALOG */
+dialog {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    z-index: -2;
+}
+
+dialog::backdrop {
+    background: radial-gradient(circle, rgba(59, 15, 126, 0.6) 0%, rgba(64, 6, 92, 0.8) 50%, rgba(13, 2, 41, 1) 100%);
+}
+
+dialog p {
+    font-family: 'Bad Script', sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    color: white;
+    text-shadow: 0px 2px 6px rgba(32, 3, 47, 0.7);
+}
+
+dialog div {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}
+
+dialog div button {
+    padding: 0.8em 2.5em;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    background-color: rgba(47, 7, 115, 0.7);
+    color: white;
+    cursor: pointer;
+    border: solid 2px rgba(170, 114, 255, 0.5);
+    border-radius: 5em;
+    outline: none;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+dialog div button a {
+    text-decoration: none;
+    color: white;
+}
+
+dialog div button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(67, 24, 122);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0);
+    transform: translate3d(0, 0.5em, -1em);
+    transition: all 150ms cubic-bezier(.175, .885, .32, 1.275);
+}
+
+dialog div button:hover {
+    background-color: rgba(70, 14, 166, 0.7);
+    transform: translate(0, 0.25em);
+}
+
+/* ANIMAÇÕES */
+@keyframes astra {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(60px);
+    }
+}
+
+@keyframes astraPesadelo {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes texto {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* --- CENA HERANÇA --- */
+
+/* TEXTOS */
+.texto-1,
+.texto-2,
+.texto-3,
+.texto-4 {
+    font-family: 'Bad Script', sans-serif;
+    font-weight: 500;
+    color: rgb(48, 17, 89);
+}
+
+.texto-1 {
+    position: absolute;
+    top: 95px;
+    left: 560px;
+    width: 210px;
+    font-size: 16px;
+}
+
+.texto-2 {
+    position: absolute;
+    top: 210px;
+    left: 810px;
+    width: 290px;
+    font-size: 17px;
+}
+
+.texto-3 {
+    position: absolute;
+    top: 380px;
+    left: 260px;
+    width: 290px;
+    font-size: 18px;
+}
+
+.texto-4 {
+    position: absolute;
+    top: 450px;
+    left: 990px;
+    width: 180px;
+    font-size: 19px;
+}
+
+/* IMAGENS */
+.bj1,
+.bj2,
+.bj3,
+.bj4 {
+    position: absolute;
+    transform: scale(0.75);
+    cursor: pointer;
+}
+
+.bj1 {
+    top: 23px;
+    left: 625px;
+}
+
+.bj2 {
+    top: 94px;
+    left: 941px;
+    transform: scale(0.73);
+}
+
+.bj3 {
+    top: 294px;
+    left: 179px;
+    transform: scale(0.7);
+}
+
+.bj4 {
+    top: 325px;
+    left: 1065px;
+    transform: scale(0.73);
+}
+
+.hidden {
+    display: none;
+}
+
+/* INPUTS */
+.inpHeranca,
+.inpFasntasmas {
+    width: 250px;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 20px 0 10px;
+    line-height: 15px;
+    padding: 8px 15px;
+    outline: none;
+    font-size: 16px;
+    border: solid 2px rgb(65, 17, 136);
+    border-radius: 0.8em;
+    text-align: center;
+}
+
+/* --- CENA O PESADELO --- */
+
+/* ELEMENTOS FANTASMAS */
+.fantasmas1,
+.fantasmas2 {
+    position: absolute;
+    z-index: 2;
+    animation: fantasmas1 1.2s infinite alternate linear;
+}
+
+.fantasmas1 {
+    top: 50px;
+    left: 470px;
+    transform: scale(0.7);
+    cursor: pointer;
+}
+
+.fantasmas1 img:hover {
+    top: 40px;
+    left: 470px;
+    transform: scale(1.12);
+    transition: width 0.3s, left 0.3s, top 0.3s, transform 0.3s;
+}
+
+.fantasmas2 {
+    top: 130px;
+    left: 790px;
+    transform: scale(0.7);
+    z-index: 1;
+    animation: fantasmas2 1s infinite alternate linear;
+}
+
+/* ANIMAÇÕES */
+@keyframes fantasmas1 {
+    from {
+        transform: translateY(0) scale(0.7);
+    }
+    to {
+        transform: translateY(15px) scale(0.7);
+    }
+}
+
+@keyframes fantasmas2 {
+    from {
+        transform: translateY(0) scale(0.7);
+    }
+    to {
+        transform: translateY(20px) scale(0.7);
+    }
+}
+
+/* --- CENA MERGULHO --- */
+
+/* TEXTOS */
+
+.txtMergulho-1 p, .txtMergulho-2 p, .txtMergulho-3 p {
+    font-family: 'Rubik Glitch', sans-serif;
+    font-size: 17px;
+    color: rgb(114, 154, 255);
+}
+
+.txtMergulho-1 {
+    top: 85px;
+    left: 200px;
+    width: 400px;
+    opacity: 0;
+    text-align: left;
+    animation: txtMergulho-1 1.7s linear forwards;
+}
+
+.txtMergulho-2 {
+    top: 230px;
+    right: 200px;
+    width: 400px;
+    opacity: 0;
+    animation: txtMergulho-2 1.7s linear forwards;
+    animation-delay: 3.7s;
+}
+
+.txtMergulho-3 {
+    top: 410px;
+    left: 400px;
+    opacity: 0;
+    animation: txtMergulho-3 1.7s linear forwards;
+    animation-delay: 7.3s;
+}
+
+.opcoesMergulho {
+    display: flex;
+    flex-direction: column;
+}
+
+.emergir {
+    top: -210px;
+}
+
+.afundar {
+    top: 300px;
+}
+
+/* ANIMAÇÕES */
+@keyframes astraMergulho {
+    from {
+        transform: translateY(0) scale(0.6);
+    }
+    to {
+        transform: translateY(15px) scale(0.6);
+    }
+}
+
+@keyframes txtMergulho-1 {
+    from {
+        opacity: 0;
+        color: rgb(48, 17, 89);
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        color: #ffffff;
+        transform: translateX(0);
+    }
+}
+
+@keyframes txtMergulho-2 {
+    from {
+        opacity: 0;
+        color: rgb(48, 17, 89);
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        color: #ffffff;
+        transform: translateX(0);
+    }
+}
+
+@keyframes txtMergulho-3 {
+    from {
+        opacity: 0;
+        color: rgb(48, 17, 89);
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        color: #ffffff;
+        transform: translateY(0);
+    }
+}
+
+.btnMergulho {
+  position:relative;
+  padding: 10px 20px;  
+  border: none;
+  background: none;
+  cursor: pointer;
+  
+  font-family: "Ubuntu";
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2.5px;
+  color: white;
+  
+  background-color: rgb(32, 113, 211);
+  box-shadow: hsla(210, 40%, 52%, .4) 2px 2px 22px;
+  border-radius: 10em; 
+  z-index: 0;  
+  overflow: hidden;
+
+  animation: bubbles 1s linear forwards;
+  animation-delay: 10.5s;
+  opacity: 0;
+
+}
+
+.right::after, .btnMergulho::after {
+  content: var(--content);
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  padding: 40px 40px;
+  pointer-events:none;
+}
+
+.btnMergulho::after{
+  font-weight: 600;
+  top: -30px;
+  left: -20px;
+} 
+
+.right, .left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.right {
+  left: 66%;
+}
+.left {
+  right: 66%;
+}
+.right::after {
+  top: -30px;
+  left: calc(-66% - 20px);
+  
+  background-color: rgb(25, 4, 64, .8);
+  color:transparent;
+  transition: transform .4s ease-out;
+  transform: translate(0, -90%) rotate(0deg)
+}
+
+.btnMergulho:hover .right::after {
+  transform: translate(0, -47%) rotate(0deg)
+}
+
+.btnMergulho .right:hover::after {
+  transform: translate(0, -50%) rotate(-7deg)
+}
+
+.btnMergulho .left:hover ~ .right::after {
+  transform: translate(0, -50%) rotate(7deg)
+}
+
+/* bubbles */
+.btnMergulho::before {
+  content: '';
+  pointer-events: none;
+  opacity: .6;
+  background:
+    radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, white 3px, white 4px, transparent 4px),
+    radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, white 3px, white 4px, transparent 4px),
+    radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, white 5px, white 6px, transparent 6px);
+
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: bubbles 5s linear infinite both;
+}
+
+@keyframes bubbles {
+  from {
+    opacity: 0;
+    transform: translate();
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -66.666%);
+  }
+}
+
+/* ANIMAÇÃO */
+#words-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: absolute;
+    top: 0;
+    width: 100vh;
+}
+
+.word {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    opacity: 0;
+    font-size: 35px;
+    font-family: 'Eater', sans-serif;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(90vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0vh);
+        opacity: 1;
+    }
+}
+
+/* --- CENA AÍOLOS --- */
+
+.main {
+    overflow: clip;
+}
+
+/* CANVAS */
+
+.astraAiolos p {
+    position: absolute;
+    top: 585px;
+    left: 130px;
+    font-family: 'Bad Script', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #59328b;
+}
+
+.canva1 img {
+    position: absolute;
+    top: 80px;
+    left: 125px;
+    width: 300px;
+    z-index: 2;
+    cursor: pointer;
+    animation: canvas 2s linear forwards;
+    /* opacity: 0; */
+}
+
+.canva1 p {
+    position: absolute;
+    top: 400px;
+    left: 147px;
+    width: 260px;
+    text-align: center;
+    font-family: 'Bad Script', sans-serif;
+    font-size: 20px;
+    color:#ffffff;
+    z-index: 3;
+    animation: textoCanva 1.5s linear forwards;
+}
+
+.canva2 p {
+    position: absolute;
+    top: 280px;
+    left: 878px;
+    font-family: 'Bad Script', sans-serif;
+    font-size: 33px;
+    background: linear-gradient(to right, #59328b, #a48100); /* Gradiente de cores */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+    z-index: 3;
+    animation: textoCanva 1.5s linear forwards;
+}
+
+.mini-container {
+    position: absolute;
+    top: 560px;
+    left: 570px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 350px;
+    font-family: 'Bad Script', sans-serif;
+    font-size: 25px;
+    color: #a48100;
+    animation: textoCanva 1.5s linear forwards;
+}
+
+.mini-container button {
+    padding: 15px 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    background: #dbac02;
+    color: white;
+    cursor: pointer;
+    border: 2px solid #fedc63;
+    border-radius: 7px;
+    outline: none;
+}
+
+.mini-container button:hover {
+    background-color: #59328b;
+    border: 2px solid #caa1ff;
+    transition: 0.5s;
+}
+
+.canva2 img {
+    position: absolute;
+    top: 80px;
+    left: 520px;
+    width: 800px;
+    z-index: 2;
+    cursor: pointer;
+    animation: canvas 1.5s linear forwards;
+}
+
+.canva3 img {
+    position: absolute;
+    top: 340px;
+    left: 520px;
+    width: 800px;
+    z-index: 2;
+    cursor: pointer;
+    animation: canvas 2s linear forwards;
+}
+
+.nuvens img {
+    position: absolute;
+    top: 20px;
+    left: -1100px;
+    width: 1200px;
+    animation: nuvens 70s linear infinite;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes nuvens {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(2600px);
+    }
+  }
+
+  @keyframes canvas {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+
+  @keyframes textoCanva {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+
+  /* --- CENA DESPERTAR --- */
+
+  .animation {
+    animation: relogios .2s infinite linear;
+  }
+
+  .R1 img,
+  .R2 img,
+  .R3 img,
+  .R4 img,
+  .R5 img,
+  .R6 img,
+  .R7 img,
+  .R8 img {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .R1 img {
+    top: 130px;
+    right: 120px;
+    max-width: 170px;
+  }
+
+  .R2 img {
+    top: 480px;
+    right: 250px;
+    max-width: 110px;
+    transform: rotate(-25deg);
+  }
+
+  .R3 img {
+    top: 410px;
+    left: 530px;
+    max-width: 80px;
+    transform: rotate(20deg);
+  }
+
+  .R4 img {
+    top: 100px;
+    right: 520px;
+    max-width: 30px;
+    transform: rotate(-10deg);
+    cursor: pointer;
+  }
+
+  .R5 img {
+    top: 130px;
+    left: 300px;
+    max-width: 90px;
+  }
+
+  .R6 img {
+    top: 460px;
+    left: 90px;
+    max-width: 150px;
+    transform: rotate(15deg);
+  }
+
+  .R7 img {
+    top: 300px;
+    left: 900px;
+    max-width: 70px;
+    transform: rotate(15deg);
+  }
+
+  .R8 img {
+    top: 50px;
+    left: 550px;
+    max-width: 110px;
+    /* transform: rotate(-5deg); */
+  }
+
+  #bar {
+    position: absolute;
+    bottom: 10%;
+    width: 65%;
+    height: 15px;
+    background-image: linear-gradient(rgb(255, 245, 197, 1),rgb(255, 214, 152), rgb(255, 222, 58));
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(255, 164, 255, 1);
+    transition: width 1s linear both;
+}
+
+.textoDespertar {
+    position: absolute;
+    bottom: 120px;
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 27px;
+    letter-spacing: 7px;
+    color: #ffffff;
+    animation: textoDespertar .5s ease-in-out infinite;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes relogios {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes textoDespertar {
+    0% {
+        font-size: 27px;
+    }
+    50% {
+        font-size: 32px;
+    }
+    100% {
+        font-size: 27px;
+    }
+}
+
+/* --- CENA FINAL 2 --- */
+
+.autor img {
+    position: absolute;
+    top: 120px;
+    left: 550px;
+    width: 25%;
+    cursor: pointer;
+}
+
+.autor2 img {
+    position: absolute;
+    top: 30px;
+    left: 250px;
+    width: 65%;
+    cursor: pointer;
+}
+
+.autor3 img {
+    position: absolute;
+    top: 200px;
+    left: 250px;
+    width: 65%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.textoF2 {
+    position: absolute;
+    font-family: 'Eater', sans-serif;
+    font-size: 17px;
+
+    color: #ffefb3;
+}
+
+.textoF2-1 {
+    top: 250px;
+    left: 250px;
+    width: 300px;
+}
+
+.textoF2-2 {
+    top: 350px;
+    left: 950px;
+    width: 350px;
+    text-align: right;
+    z-index: 1;
+}
+
+.textoF2-3 {
+    top: 420px;
+    left: 210px;
+    width: 900px;
+    text-align: right;
+    color: #372c05;
+    z-index: 3;
+}
+
+.textoF2-4 {
+    bottom: 30px;
+    left: -190px;
+    width: 900px;
+    text-align: right;
+    font-size: 35px;
+    color: #ffefb3;
+    z-index: 3;
+}
+
+.btnFinal2 button {
+    position: absolute;
+    bottom: 40px;
+    right: 150px;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    border: 3px solid #a48100;
+    background-color: #ffe06f;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #372c05;
+    cursor: pointer;
+}
+
+/* --- CENA DIHFUSO --- */
+
+.autorDih img {
+    position: absolute;
+    transform: scale(0.7);
+    top: 155px;
+    left: 300px;
+    animation: autorDih 17s ease-out forwards;
+    z-index: 4;
+    cursor: none;
+}
+
+.astraDih img {
+    position: absolute;
+    transform: scale(0.7);
+    top: 140px;
+    right: 300px;
+    animation: astraDih 17s ease-out forwards;
+    z-index: 4;
+    cursor: none;
+}
+
+.textoDih p {
+    position: absolute;
+    font-family: 'Bad Script', sans-serif;
+}
+
+@keyframes autorDih {
+    from {
+        transform: translateX(0px) scale(0.7);
+        
+    }
+    to {
+        transform: translateX(220px) scale(0.7);
+
+    }
+}
+
+@keyframes astraDih {
+    from {
+        transform: translateX(0px) scale(0.7);
+        cursor: none;
+    }
+    to {
+        transform: translateX(-260px) scale(0.7);
+        cursor: none;
+    }
+}
+
+.textoDih-1 p {
+    top: 100px;
+    left: 150px;
+    width: 400px;
+    text-shadow: #fffed2 0px 0px 10px;
+    /* font-weight: 600; */
+    color: #ffe06f;
+    opacity: 0;
+    font-size: 20px;
+    animation: txtD1 2s linear forwards;
+    animation-delay: 1.7s;
+}
+
+.textoDih-2 p {
+    top: 140px;
+    right: 170px;
+    width: 270px;
+    text-align: right;
+    text-shadow: #dabfff 0px 0px 10px;
+    /* font-weight: 600; */
+    color: hsl(278, 100%, 90%);
+    font-size: 20px;
+    opacity: 0;
+    animation: txtD2 2s linear forwards;
+    animation-delay: 5.7s;
+}
+
+.textoDih-3 p {
+    top: 470px;
+    left: 210px;
+    width: 270px;
+    text-align: right;
+    text-shadow: #fffed2 0px 0px 10px;
+    /* font-weight: 600; */
+    color: #ffe06f;
+    font-size: 20px;
+    opacity: 0;
+    animation: txtD3 2s linear forwards;
+    animation-delay: 9.7s;
+}
+
+@keyframes  txtD1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes  txtD2 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes  txtD3 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.textoDih-4 p {
+    top: 360px;
+    left: 623px;
+    width: 190px;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: #fffed2 0px 0px 10px;
+    /* font-weight: 600; */
+    background: linear-gradient(to right, #551ea3, #af9124); /* Gradiente de cores */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+    font-size: 21px;
+    z-index: 8;
+}
+
+.minicontainer, #final1Button {
+    animation: canva-AA linear forwards;
+    animation-delay: 21s;
+    transition: 3s;
+    opacity: 0;
+    z-index: 5;
+
+
+}
+
+.canva-AA img {
+    position: absolute;
+    top: 200px;
+    left: 250px;
+    width: 65%;
+}
+
+@keyframes canva-AA {
+    to {
+        opacity: 1;
+    }
+}
+
+#final1Button button{
+    position: absolute;
+    top: 600px;
+    right: 660px;
+    padding: 15px 30px;
+    outline: none;
+    border-radius: 100px;
+    background-color: rgb(32, 113, 211);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    border: 2px solid white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 1s;
+}
+#final1Button button:hover {
+    background: rgb(85,30,163);
+    background: linear-gradient(90deg, rgba(85,30,163,1) 0%, rgba(175,145,36,1) 100%);
+    border-color: white;
+}
+
+
+/* ANIMAÇÂO DE ONDULAÇÃO */
+.ripple-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Para que o container não interfira nos cliques */
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(228, 195, 255, 0.2);
+    transform: scale(0);
+    animation: ripple-animation 15s ease-out forwards;
+    animation-delay: 17s;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+/* --- CENA 3u 4#TOR? --- */
+
+.fundoMaquina {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #212c2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.typewriter {
+    text-wrap: wrap;
+    border-right: 2px solid #00ff0d;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #64ff6c;
+    text-shadow: 0px 0px 5px #00ff0d;
+    font-size: 22px;
+    z-index: 2;
+    animation: blink 0.75s step-end infinite;
+}
+
+#message {
+    width: 500px;
+    text-wrap: wrap;
+    text-align: center;
+    /* overflow: hidden; */
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.flashing-light {
+    overflow: hidden;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    z-index: 1; /* As luzes ficarão atrás da mensagem */
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.btnAutor {
+    padding: 10px 30px;
+    border: 3px solid #64ff6c;
+    border-radius: 50px;
+    background-color: #64ff6c76;
+    text-transform: uppercase;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-shadow: 0px 0px 5px #fff;
+    box-shadow: 0px 2px 15px #64ff6c8e;
+    animation: btnAutor 2s ease-in forwards;
+    animation-delay: 15s;
+    opacity: 0;
+}
+
+.btnAutor:hover {
+    background-color: #82ff86a8;
+}
+
+@keyframes btnAutor {
+    to {
+        opacity: 1;
+    }
+}
+
+/* --- FINAL 1 --- */
+
+
+.autorF1 img {
+    position: fixed;
+    left: 50px;
+    bottom: -145px;
+    transform: scale(.65);
+}
+
+.txtFinal1 {
+    position: absolute;
+    top: 200px;
+    right: 220px;
+}
+
+.txtFinal1-2 {
+    position: absolute;
+    top: 400px;
+    right: 220px;
+    width: 400px;
+}
+
+.txtFinal1 p, .txtFinal1-2 p {
+    font-size: 35px;
+    color: #551ea3;
+}

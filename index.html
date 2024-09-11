@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Sonho</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+    <audio id="audioFundo" autoplay loop>
+        <source src="./audio/Audio-back/sonho-1.wav" type="audio/mpeg">
+    </audio>
+
+    <div class="background">
+        <img src="./img/O Sonho/Cenário.png" alt="background" class="background-img">
+    </div>
+
+    <div class="astra">
+        <a href="./aiolos.html"><img src="./img/O Sonho/Astra.png" alt="astra"></a>
+    </div>
+
+    <div class="estrelas">
+        <img id="imagemEstrelas" src="./img/O Sonho/Stars.png" alt="estrelas">
+    </div>
+
+    <div class="beijaflor" id="audio-passaro-container">
+        <a href="./heranca.html">
+            <img src="./img/O Sonho/Beija-flor.png" alt="beijaflor">
+            <audio id="audio-passaro">
+                <source src="./audio/O Sonho/passaros.mp3" type="audio/mpeg">
+            </audio>
+        </a>
+    </div>
+
+    <div class="botao">
+        <img id="btnTrocarAudio" src="./img/O Sonho/Botão.png" alt="botao">
+    </div>
+
+    <div class="texto">
+        <p>Astra está dormindo... <br>com o que será que ele está sonhando?</p>
+    </div>
+
+    <div class="btnDespertar" id="audio-relogio-container">
+        <audio id="audio-relogio">
+            <source src="./audio/O Sonho/relogio.mp3" type="audio/mpeg">
+        </audio>
+        <button id="btnDespertar">DESPERTAR</button>
+    </div>
+
+    <dialog id="modal">
+        <audio id="audio-relogio-modal">
+            <source src="./audio/O Sonho/relogio.mp3" type="audio/mpeg">
+        </audio>
+        <p>Hora de acordar?</p>
+        <div id="opcoes">
+            <a href="./despertar.html"><button id="btnSim">Sim</button></a>
+            <button id="btnNao">Não</button>
+        </div>
+    </dialog>
+
+    <p id="output"></p>
+
+    <script type="text/javascript" src="./js/sonho.js"></script>
+    
+</body>
+</html>

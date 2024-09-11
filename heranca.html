@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herança</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+    <audio id="audioFundo" autoplay loop volume="0.3">
+        <source src="./audio/Herança/the-gardener-nature-sounds-9684.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="background">
+        <img src="./img/Herança/Background.png" alt="background" class="background-img">
+    </div>
+
+    <!-- Passo 1 -->
+    <div class="texto-1" id="texto-1">
+        Lembra, na infância amava explorar o jardim da casa da avó...
+    </div>
+
+    <div class="bj1" id="bj1">
+        <img src="./img/Herança/BJ1.png" alt="beija-flor 1">
+    </div>
+
+    <!-- Passo 2 -->
+    <div class="texto-2 hidden" id="texto-2">
+        Lembra, quando tua mãe te ensinou a cuidar das plantas, como a ela foi ensinado...
+    </div>
+
+    <div class="bj2 hidden" id="bj2">
+        <img src="./img/Herança/BJ2.png" alt="beija-flor 2">
+    </div>
+    
+    <!-- Passo 3 -->
+    <div class="texto-3 hidden" id="texto-3">
+        Agora, esse carinho foi semeado em você...
+    </div>
+
+    <div class="bj3 hidden" id="bj3">
+        <img src="./img/Herança/BJ3.png" alt="beija-flor 3">
+    </div>
+
+    <!-- Passo 4 -->
+    <div class="texto-4 hidden" id="texto-4">
+        Espero, então, poder semeá-lo em alguém.
+    </div>
+
+    <div class="bj4 hidden" id="bj4">
+        <img src="./img/Herança/BJ4.svg" alt="beija-flor 4">
+    </div>
+
+    <dialog id="modal">
+        <audio id="audio-relogio-modal">
+            <source src="./audio/Herança/the-gardener-nature-sounds-9684.mp3" type="audio/mpeg">
+        </audio>
+        <span id="nameError" class="error"></span>
+        <p>O que foi plantado em você?</p>
+        <label for="heranca"></label>
+        <input class="inpHeranca" id="heranca" type="text" placeholder="Compartilhe aqui">
+        <div id="opcoes">
+            <a href="./index.html"><button id="btnEnviar">Enviar</button></a>
+        </div>
+    </dialog>
+
+    <!-- <script>
+        // Marcar como visitada
+        localStorage.setItem('visitedHeranca', 'true');
+    </script> -->
+
+    <script type="text/javascript" src="./js/herança.js"></script>
+
+</body>
+</html>
