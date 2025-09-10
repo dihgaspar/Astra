@@ -1,5 +1,5 @@
 const messageElement = document.getElementById('message');
-const message = "Eie, você me achou aqui, parabéns! :) Mas.. esse não é um dos finais da história. Ele ainda dorme, então volte ao nosso sonho..";
+const message = "Hey, you found me here, congratulations! :) But.. this is not one of the endings of the story. He is still sleeping, so go back to our dream..";
 let index = 0;
 
 function typeWriter() {
@@ -28,5 +28,6 @@ function createFlashingLight() {
 for (let i = 0; i < 50; i++) {
     createFlashingLight();
 }
+
 
 window.onload = typeWriter;
