@@ -55,11 +55,12 @@ document.getElementById('btnDihfuso').addEventListener('click', function(event) 
     const nameError = document.getElementById('nameError');
 
     if (nameInput.value.trim() === "") {
-        nameError.textContent = "Eie, parece que você esqueceu de colocar seu nome :<. Pode me contar? Quero te agradecer! Hehe";
+        nameError.textContent = "Hey, it looks like you forgot to put your name :<. Can you tell me? I want to thank you! Hehe";
         nameError.style.display = "inline";
         event.preventDefault();
     } else {
         nameError.style.display = "none";
         window.location.href = './final1.html'; // Redireciona para a página final
     }
+
 });
