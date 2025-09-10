@@ -1163,7 +1163,7 @@ dialog div button:hover {
 .textoDih-4 p {
     top: 360px;
     left: 623px;
-    width: 190px;
+    width: 210px;
     font-weight: 600;
     text-align: center;
     text-shadow: #fffed2 0px 0px 10px;
@@ -1360,4 +1360,5 @@ dialog div button:hover {
 .txtFinal1 p, .txtFinal1-2 p {
     font-size: 35px;
     color: #551ea3;
+
 }
