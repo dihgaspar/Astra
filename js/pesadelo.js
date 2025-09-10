@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // PREVENÇÃO DE ERRO
 
         if (inputPesadelo.value.trim() === "") {
-            nameError.textContent = "Vamos lá, não deixe os fantasmas te assustarem.. Enfrente eles!";
+            nameError.textContent = "Come on, don’t let the ghosts scare you.. Face them!";
             nameError.style.display = "inline";
             event.preventDefault();
         } else {
@@ -103,4 +103,5 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = './mergulho.html'; // Redireciona para a página final
         }
     })
+
 });
