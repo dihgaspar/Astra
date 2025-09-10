@@ -44,11 +44,12 @@ document.getElementById('btnEnviar').addEventListener('click', function(event) {
     const nameError = document.getElementById('nameError');
 
     if (heranca.value.trim() === "") {
-        nameError.textContent = "Parece que alguém está meio tímido! Não se preocupe, pode compratilhar o que quiser :)";
+        nameError.textContent = "Looks like someone is feeling a bit shy! Don’t worry, you can share whatever you want :)";
         nameError.style.display = "inline";
         event.preventDefault();
     } else {
         nameError.style.display = "none";
         window.location.href = './index.html'; // Redireciona para a página final
     }
+
 });
